@@ -9,10 +9,4 @@ builder.AddNpmApp("react", "../AspireJavaScript.React")
     .WithExternalHttpEndpoints()
     .PublishAsDockerFile();
 
-builder.AddNpmApp("vue", "../AspireJavaScript.Vue")
-    .WithReference(weatherApi)
-    .WithHttpEndpoint(env: "PORT")
-    .WithExternalHttpEndpoints()
-    .PublishAsDockerFile();
-
 builder.Build().Run();
