@@ -2,8 +2,8 @@ services:
   weatherapi:
     container_name: "weatherapi"
     build:
-      context: .
-      dockerfile: AspireJavaScript.MinimalApi/Dockerfile
+      context: ./AspireJavaScript.MinimalApi
+      dockerfile: Dockerfile
     environment:
       OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES: "true"
       OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES: "true"
@@ -19,8 +19,8 @@ services:
   react:
     container_name: "react"
     build:
-      context: .
-      dockerfile: AspireJavascript.React/Dockerfile
+      context: ./AspireJavascript.React
+      dockerfile: Dockerfile
     environment:
       NODE_ENV: "development"
       services__weatherapi__http__0: "http://weatherapi:8080"
