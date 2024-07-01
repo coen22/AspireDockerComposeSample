@@ -24,8 +24,8 @@ services:
     environment:
       NODE_ENV: "development"
       services__weatherapi__http__0: "http://weatherapi:8080"
-      PORT: "8000"
+      PORT: "8001"
     ports:
       - target: 80
-        published: 8000
+        published: 8001
     restart: unless-stopped
