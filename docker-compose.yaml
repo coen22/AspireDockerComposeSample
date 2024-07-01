@@ -1,26 +1,31 @@
 services:
   weatherapi:
     container_name: "weatherapi"
-    image: "weatherapi:latest"
+    build:
+      context: .
+      dockerfile: AspireJavaScript.MinimalApi/Dockerfile
     environment:
       OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EXCEPTION_LOG_ATTRIBUTES: "true"
       OTEL_DOTNET_EXPERIMENTAL_OTLP_EMIT_EVENT_LOG_ATTRIBUTES: "true"
       OTEL_DOTNET_EXPERIMENTAL_OTLP_RETRY: "in_memory"
       ASPNETCORE_FORWARDEDHEADERS_ENABLED: "true"
     ports:
-    - target: 8080
-      published: 10000
-    - target: 8443
-      published: 10001
+      - target: 8080
+        published: 10000
+      - target: 8443
+        published: 10001
     restart: unless-stopped
+
   react:
     container_name: "react"
-    image: "react:latest"
+    build:
+      context: .
+      dockerfile: AspireJavascript.React/Dockerfile
     environment:
       NODE_ENV: "development"
       services__weatherapi__http__0: "http://weatherapi:8080"
       PORT: "8000"
     ports:
-    - target: 8000
-      published: 8000
+      - target: 80
+        published: 8000
     restart: unless-stopped
