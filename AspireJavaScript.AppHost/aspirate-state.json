@@ -11,5 +11,6 @@
     "salt": "94OzAB6C4sm2Fh5j",
     "hash": "XjHCiQ7By5qWNWOg4K57ojPu/qpeP/WvXiQTH/VpVZI=",
     "secrets": {}
-  }
+  },
+  "processAllComponents": true
 }

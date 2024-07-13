@@ -9,8 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.0.1" />
-    <PackageReference Include="Aspire.Hosting.NodeJs" Version="8.0.1" />
+    <PackageReference Include="Aspire.Hosting" Version="8.0.2" />
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="8.0.2" />
+    <PackageReference Include="Aspire.Hosting.NodeJs" Version="8.0.2" />
+    <PackageReference Include="Microsoft.Extensions.ServiceDiscovery.Yarp" Version="8.0.2" />
   </ItemGroup>
 
   <ItemGroup>
